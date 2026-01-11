@@ -6,7 +6,7 @@ This project contains a FastAPI server implemented in Python. It provides two ro
 
 The project has the following files and directories:
 
-- `python-server/src/main.py`: This file contains the implementation oof the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
+- `python-server/src/main.py`: This file contains the implementation of the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
 
 - `python-server/src/__init__.py`: This file is an empty file that marks the `src` directory as a Python package.
 
@@ -16,24 +16,57 @@ The project has the following files and directories:
 
 - `docker-compose.yml`: This file is used to define and run multi-container Docker applications. It specifies the services to run, their configurations, and any dependencies between them.
 
-## Getting Started
+## Getting Started (Python)
 
 To run the FastAPI server using Docker, follow these steps:
 
-- Build and start the Docker containers by running the following command:
+```shell
+docker compose up
+```
 
-  ```shell
-  docker compose up
-  ```
+The FastAPI server will be available at `http://localhost:8000`.
 
-  This command will build the Docker image for the FastAPI server and start the containers defined in the `docker-compose.yml` file.
-
-- The FastAPI server should now be running. You can access at port `8000`.
-
-## API Routes
-
-The FastAPI server provides the following API routes:
+## API Routes (Python)
 
 - `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
-
 - `GET /tasks`: Retrieves the task list.
+
+# Node.js Server
+
+This project also includes a simple Node.js server built with Express. It provides similar task management endpoints.
+
+## Project Structure
+
+- `node-server/package.json`: Defines the Node.js project and its dependencies.
+- `node-server/src/index.js`: Contains the Express server implementation with routes for creating and retrieving tasks.
+
+## Getting Started (Node.js)
+
+1. Install dependencies:
+
+```shell
+cd node-server
+npm install
+```
+
+2. Run the server:
+
+```shell
+npm start
+```
+
+The Node.js server will be available at `http://localhost:3000`.
+
+## API Routes (Node.js)
+
+- `POST /tasks`: Adds a task to the in‑memory task list. Send a JSON body with the task details.
+- `GET /tasks`: Returns the current list of tasks.
+
+## Migration Details
+
+The repository now supports both Python (FastAPI) and Node.js (Express) implementations. You can choose which server to run based on your preferred language or deployment strategy:
+
+- **Python**: Use Docker Compose (`docker compose up`) to start the FastAPI service on port 8000.
+- **Node.js**: Run the server locally with `npm start` inside the `node-server` directory on port 3000.
+
+Both servers share the same task management API contract, making it easy to switch between implementations for testing or production needs.
