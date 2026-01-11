@@ -1,24 +1,22 @@
-# Python Server
+# Anythink Market
 
-This project contains a FastAPI server implemented in Python. It provides two routes for managing a task list.
+This repository provides two implementations of a simple task‑management API:
 
-## Project Structure
+- **Python Server** – FastAPI implementation, containerized with Docker.
+- **Node.js Server** – Express implementation, runnable locally with npm.
 
-The project has the following files and directories:
+Both servers expose the same `/tasks` endpoints (POST to add a task, GET to retrieve the list), making it easy to switch between languages for testing or production.
 
-- `python-server/src/main.py`: This file contains the implementation of the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
+## Python Server
 
-- `python-server/src/__init__.py`: This file is an empty file that marks the `src` directory as a Python package.
+### Project Structure
 
-- `python-server/requirements.txt`: This file lists the dependencies required for the FastAPI server and other dependencies..
+- `python-server/src/main.py`: FastAPI server with two routes.
+- `python-server/src/__init__.py`: Marks the `src` directory as a package.
+- `python-server/requirements.txt`: Python dependencies.
+- `python-server/Dockerfile`: Docker image definition.
 
-- `python-server/Dockerfile`: This file is used to build a Docker image for the FastAPI server. It specifies the base image, copies the source code into the image, installs the dependencies, and sets the command to run the server.
-
-- `docker-compose.yml`: This file is used to define and run multi-container Docker applications. It specifies the services to run, their configurations, and any dependencies between them.
-
-## Getting Started (Python)
-
-To run the FastAPI server using Docker, follow these steps:
+### Getting Started (Python)
 
 ```shell
 docker compose up
@@ -26,47 +24,46 @@ docker compose up
 
 The FastAPI server will be available at `http://localhost:8000`.
 
-## API Routes (Python)
+### API Routes (Python)
 
-- `POST /tasks`: Adds a task to the task list. The request body should contain the task details.
+- `POST /tasks`: Adds a task to the task list.
 - `GET /tasks`: Retrieves the task list.
 
-# Node.js Server
+## Node.js Server
 
-This project also includes a simple Node.js server built with Express. It provides similar task management endpoints.
+### Project Structure
 
-## Project Structure
+- `node-server/package.json`: Node.js project definition.
+- `node-server/src/index.js`: Express server with task routes.
 
-- `node-server/package.json`: Defines the Node.js project and its dependencies.
-- `node-server/src/index.js`: Contains the Express server implementation with routes for creating and retrieving tasks.
-
-## Getting Started (Node.js)
-
-1. Install dependencies:
+### Getting Started (Node.js)
 
 ```shell
 cd node-server
 npm install
-```
-
-2. Run the server:
-
-```shell
 npm start
 ```
 
-The Node.js server will be available at `http://localhost:3000`.
+The Node.js server will be available at `http://localhost:8001`.
 
-## API Routes (Node.js)
+### API Routes (Node.js)
 
-- `POST /tasks`: Adds a task to the in‑memory task list. Send a JSON body with the task details.
+- `POST /tasks`: Adds a task to the in‑memory task list (JSON body).
 - `GET /tasks`: Returns the current list of tasks.
 
 ## Migration Details
 
-The repository now supports both Python (FastAPI) and Node.js (Express) implementations. You can choose which server to run based on your preferred language or deployment strategy:
+You can run either implementation:
 
-- **Python**: Use Docker Compose (`docker compose up`) to start the FastAPI service on port 8000.
-- **Node.js**: Run the server locally with `npm start` inside the `node-server` directory on port 3000.
+- **Python**: `docker compose up` → port 8000.
+- **Node.js**: `npm start` inside `node‑server` → port 8001.
 
-Both servers share the same task management API contract, making it easy to switch between implementations for testing or production needs.
+Both adhere to the same API contract, allowing seamless migration between the two runtimes.
+
+## Copilot Guidance (optional)
+
+When using GitHub Copilot to edit this README, focus on:
+
+- Keeping the overview concise.
+- Highlighting the server structure and required commands.
+- Emphasizing the shared API contract for migration.
