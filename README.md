@@ -28,7 +28,7 @@ To run the FastAPI server using Docker, follow these steps:
 
   This command will build the Docker image for the FastAPI server and start the containers defined in the `docker-compose.yml` file.
 
-- The FastAPI server should now be running. You can access at port `8000`.
+- The Node.js server should now be running. You can access it at port `8001`.
 
 ## API Routes
 
