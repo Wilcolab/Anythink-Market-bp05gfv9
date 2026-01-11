@@ -6,7 +6,7 @@ This project contains a FastAPI server implemented in Python. It provides two ro
 
 The project has the following files and directories:
 
-- `python-server/src/main.py`: This file contains the implementation of the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
+- `python-server/src/main.py`: This file contains the implementation oof the FastAPI server with two routes. It handles adding a task to a list and retrieving the list.
 
 - `python-server/src/__init__.py`: This file is an empty file that marks the `src` directory as a Python package.
 
