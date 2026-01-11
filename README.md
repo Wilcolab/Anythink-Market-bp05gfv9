@@ -44,7 +44,7 @@ npm install
 npm start
 ```
 
-The Node.js server will be available at `http://localhost:3000`.
+The Node.js server will be available at `http://localhost:8001`.
 
 ### API Routes (Node.js)
 
@@ -56,7 +56,7 @@ The Node.js server will be available at `http://localhost:3000`.
 You can run either implementation:
 
 - **Python**: `docker compose up` → port 8000.
-- **Node.js**: `npm start` inside `node‑server` → port 3000.
+- **Node.js**: `npm start` inside `node‑server` → port 8001.
 
 Both adhere to the same API contract, allowing seamless migration between the two runtimes.
 
