@@ -20,6 +20,7 @@ function calculate(operand1, operand2, operation) {
     var uri = location.origin + "/arithmetic";
 
     // TODO: Add operator
+    // Map the operation symbol to the backend operation name for API calls
     switch (operation) {
         case '+':
             uri += "?operation=add";
@@ -33,6 +34,7 @@ function calculate(operand1, operand2, operation) {
         case '/':
             uri += "?operation=divide";
             break;
+        // Power operation: exponentiation
         case '^':
             uri += "?operation=power";
             break;
