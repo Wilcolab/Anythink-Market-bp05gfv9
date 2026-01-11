@@ -147,6 +147,36 @@ describe('Arithmetic', function () {
         });
     });
 
+    describe('Power', function () {
+        // Test basic exponentiation: 2^3 = 8
+        it('raises a positive integer to a positive integer power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=2&operand2=3')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 8 });
+                    done();
+                });
+        });
+        // Test power of zero: any number to the power of 0 is 1
+        it('raises a number to the power of zero', function (done) {
+            request.get('/arithmetic?operation=power&operand1=5&operand2=0')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 1 });
+                    done();
+                });
+        });
+        // Test negative base with even exponent: (-2)^2 = 4
+        it('raises a negative base to an even power', function (done) {
+            request.get('/arithmetic?operation=power&operand1=-2&operand2=2')
+                .expect(200)
+                .end(function (err, res) {
+                    expect(res.body).to.eql({ result: 4 });
+                    done();
+                });
+        });
+    });
+
     describe('Division', function () {
         it('divides a positive integer by an integer factor ', function (done) {
             request.get('/arithmetic?operation=divide&operand1=42&operand2=2')
