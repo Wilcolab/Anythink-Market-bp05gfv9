@@ -10,7 +10,7 @@ The project has the following files and directories:
 
 - `python-server/src/__init__.py`: This file is an empty file that marks the `src` directory as a Python package.
 
-- `python-server/requirements.txt`: This file lists the dependencies required for the FastAPI server and other dependencies.
+- `python-server/requirements.txt`: This file lists the dependencies required for the FastAPI server and other dependencies..
 
 - `python-server/Dockerfile`: This file is used to build a Docker image for the FastAPI server. It specifies the base image, copies the source code into the image, installs the dependencies, and sets the command to run the server.
 
