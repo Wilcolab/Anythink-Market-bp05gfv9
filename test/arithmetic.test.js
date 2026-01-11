@@ -148,6 +148,7 @@ describe('Arithmetic', function () {
     });
 
     describe('Power', function () {
+        // Test basic exponentiation: 2^3 = 8
         it('raises a positive integer to a positive integer power', function (done) {
             request.get('/arithmetic?operation=power&operand1=2&operand2=3')
                 .expect(200)
@@ -156,6 +157,7 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
+        // Test power of zero: any number to the power of 0 is 1
         it('raises a number to the power of zero', function (done) {
             request.get('/arithmetic?operation=power&operand1=5&operand2=0')
                 .expect(200)
@@ -164,6 +166,7 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
+        // Test negative base with even exponent: (-2)^2 = 4
         it('raises a negative base to an even power', function (done) {
             request.get('/arithmetic?operation=power&operand1=-2&operand2=2')
                 .expect(200)
