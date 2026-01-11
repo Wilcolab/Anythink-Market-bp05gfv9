@@ -1,4 +1,5 @@
 const express = require('express');
+// Migrated from python-server/src/main.py using Copilot
 
 const app = express();
 const port = process.env.PORT || 8001;
@@ -33,4 +34,3 @@ app.listen(port, () => {
 });
 
 module.exports = app;
-
