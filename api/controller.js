@@ -11,11 +11,14 @@ exports.calculate = function(req, res) {
   });
 
   // TODO: Add operator
+  // This object contains all supported arithmetic operations.
+  // Each operation is a function that takes two operands and returns the result.
   var operations = {
     'add':      function(a, b) { return Number(a) + Number(b) },
     'subtract': function(a, b) { return a - b },
     'multiply': function(a, b) { return a * b },
     'divide':   function(a, b) { return a / b },
+    // Power operation: raises operand1 to the power of operand2
     'power':    function(a, b) { return Math.pow(a, b) },
   };
 
